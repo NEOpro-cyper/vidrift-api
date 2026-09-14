@@ -1,7 +1,7 @@
 const express = require("express");
 
 const app = express();
-const BASE = (process.env.MEDIA_BASE || "https:///cdn.vidrift.in").replace(/\/+$/, "");
+const BASE = (process.env.MEDIA_BASE || "https://cdn.reelvault.click").replace(/\/+$/, "");
 
 // CORS + cache
 app.use((req, res, next) => {
@@ -14,7 +14,7 @@ const pad = (n) => String(n).padStart(2, "0");
 
 const router = express.Router();
 
-// GET /api/tv/1396/1/1  ->  https:///cdn.vidrift.net/tv_1396/Season%201/S01E01/vod.m3u8
+// GET /api/tv/1396/1/1  ->  https://cdn.reelvault.click/tv_1396/Season%201/S01E01/vod.m3u8
 router.get("/tv/:id/:season/:episode", (req, res) => {
   const { id, season, episode } = req.params;
   const url = `${BASE}/tv_${id}/${encodeURIComponent("Season " + season)}/S${pad(season)}E${pad(episode)}/vod.m3u8`;
