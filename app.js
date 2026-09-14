@@ -1,7 +1,7 @@
 const express = require("express");
 
 const app = express();
-const BASE = (process.env.MEDIA_BASE || "https:///cdn.vidrift.net").replace(/\/+$/, "");
+const BASE = (process.env.MEDIA_BASE || "https:///cdn.vidrift.in").replace(/\/+$/, "");
 
 // CORS + cache
 app.use((req, res, next) => {
